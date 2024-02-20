@@ -1,0 +1,12 @@
+{% extends 'organization_scheme/base.html' %}
+
+{% block title %}Department Form{% endblock %}
+
+{% block content %}
+    <h2>Create/Update Department</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+{% endblock %}

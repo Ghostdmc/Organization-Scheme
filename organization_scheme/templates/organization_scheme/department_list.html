@@ -1,0 +1,15 @@
+{% extends 'organization_scheme/base.html' %}
+
+{% block content %}
+<h2>Departments</h2>
+<a class="btn btn-primary mb-2" href="{% url 'department-create' %}">Create Department</a>
+<ul class="list-group">
+    {% for department in departments %}
+        <li class="list-group-item">
+            {{ department.name }}
+            <a class="btn btn-sm btn-info float-right mr-2" href="{% url 'department-update' pk=department.id %}">Update</a>
+            <a class="btn btn-sm btn-danger float-right" href="{% url 'department-delete' pk=department.id %}">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Organization Structure</title>
+</head>
+<body>
+    <h1>Organization Structure</h1>
+    
+    <h2>Departments:</h2>
+    <ul>
+        {% for department in departments %}
+            <li>{{ department.name }}</li>
+            <ul>
+                {% for person in persons %}
+                    {% if person.department == department %}
+                        <li>{{ person.name }} - {{ department.name }}</li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </ul>
+</body>
+</html>

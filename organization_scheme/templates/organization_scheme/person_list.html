@@ -1,0 +1,15 @@
+{% extends 'organization_scheme/base.html' %}
+
+{% block content %}
+<h2>Persons</h2>
+<a class="btn btn-primary mb-2" href="{% url 'person-create' %}">Create Person</a>
+<ul class="list-group">
+    {% for person in persons %}
+        <li class="list-group-item">
+            {{ person.name }}
+            <a class="btn btn-sm btn-info float-right mr-2" href="{% url 'person-update' pk=person.id %}">Update</a>
+            <a class="btn btn-sm btn-danger float-right" href="{% url 'person-delete' pk=person.id %}">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

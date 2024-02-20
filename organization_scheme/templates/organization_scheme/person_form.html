@@ -1,0 +1,12 @@
+{% extends 'organization_scheme/base.html' %}
+
+{% block title %}Person Form{% endblock %}
+
+{% block content %}
+    <h2>Create/Update Person</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i>Save</button>
+    </form>
+{% endblock %}
